@@ -1,55 +1,39 @@
 <template>
-  <div class="mx-auto border-2 border-red-100">
-    <div class="flex border-2">
-      <div class="flex-1">
-        <img src="/images/landing.jpg" width="100%" alt="landing page image" class="object-cover" />
+  <div class="mx-auto h-screen">
+    <div class="flex h-full">
+      <div class="flex-1 h-full">
+        <img src="/images/landing.jpg" width="100%" height="100%" alt="landing page image" class="object-cover h-full" />
       </div>
-      <div class="flex-1">
-        <Card class="w-[350px]">
+      <div class="flex-1 flex h-full items-center justify-center">
+        <Card class="w-[450px]">
           <CardHeader>
-            <CardTitle>Create project</CardTitle>
-            <CardDescription>Deploy your new project in one-click.</CardDescription>
+            <CardTitle>Login</CardTitle>
           </CardHeader>
           <CardContent>
             <form>
               <div class="grid items-center w-full gap-4">
                 <div class="flex flex-col space-y-1.5">
-                  <Label for="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
+                  <Label for="name">Username</Label>
+                  <Input id="name" placeholder="Type your username" />
                 </div>
                 <div class="flex flex-col space-y-1.5">
-                  <Label for="framework">Framework</Label>
-                  <Select>
-                    <SelectTrigger id="framework">
-                      <SelectValue placeholder="Select" />
-                    </SelectTrigger>
-                    <SelectContent position="popper">
-                      <SelectItem value="nuxt">
-                        Nuxt.js
-                      </SelectItem>
-                      <SelectItem value="next">
-                        Next.js
-                      </SelectItem>
-                      <SelectItem value="sveltekit">
-                        SvelteKit
-                      </SelectItem>
-                      <SelectItem value="astro">
-                        Astro
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Label for="password">Password</Label>
+                  <Input id="password" placeholder="Type your password" />
                 </div>
               </div>
             </form>
           </CardContent>
-          <CardFooter class="flex justify-between px-6 pb-6">
-            <Button variant="outline">
-              Cancel
-            </Button>
-            <Button>Deploy</Button>
+          <CardFooter class="flex justify-between px-6">
+            <Button @click="handleSubmit">Login</Button>
           </CardFooter>
         </Card>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+  function handleSubmit() {
+    navigateTo("/dashboard");
+  }
+</script>

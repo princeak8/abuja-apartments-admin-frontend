@@ -1,6 +1,15 @@
 <template>
     <div>
-        <h1>Dashboard layout</h1>
-        <slot></slot>
+        <Navbar />
+        <div class="flex">
+            <div class="flex-1">
+                <SideBar />
+            </div>
+            <div class="">
+                <slot></slot>
+            </div>
+        </div>
+        
+        <h3>Footer</h3>
     </div>
 </template>
