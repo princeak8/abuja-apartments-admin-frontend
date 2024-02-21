@@ -1,5 +1,9 @@
 <template>
-    <div>
-        <h1>Houses</h1>
-    </div>
+    <div>Houses</div>
 </template>
+
+<script setup>
+definePageMeta({
+    layout: 'dashboard'
+})
+</script>

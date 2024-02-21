@@ -1,15 +1,16 @@
 <template>
-    <div>
+    <div class="w-full">
         <Navbar />
-        <div class="flex">
-            <div class="flex-1">
+        <div class="flex flex-row w-full border-1 border-blue-700">
+            <div class="flex-initial w-64">
                 <SideBar />
             </div>
-            <div class="">
+            <div class="flex-1 p-5 border-2 pt-20 ">
                 <slot></slot>
+
+                <!-- <h3>Footer</h3> -->
             </div>
+            
         </div>
-        
-        <h3>Footer</h3>
     </div>
 </template>
