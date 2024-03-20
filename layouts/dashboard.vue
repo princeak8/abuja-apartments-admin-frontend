@@ -5,7 +5,7 @@
             <div class="flex-initial w-64">
                 <SideBar />
             </div>
-            <div class="flex-1 p-5 border-2 pt-20 ">
+            <div class="flex-1 p-5 pt-20 ">
                 <slot></slot>
 
                 <!-- <h3>Footer</h3> -->

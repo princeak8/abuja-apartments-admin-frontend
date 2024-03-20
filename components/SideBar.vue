@@ -5,11 +5,12 @@
         <div
             class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
-                <div class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                <div
+                    class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                     <ul class="pb-2 space-y-2">
-                        
+
                         <li>
-                            <NuxtLink to="/dashboard" 
+                            <NuxtLink to="/dashboard"
                                 class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +34,7 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <a href="#"
+                            <a to="/dashboard/companies"
                                 class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +46,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a to="/dashboard/realtors"
                                 class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +82,34 @@
                                     </path>
                                 </svg>
                                 <span class="ml-3" sidebar-toggle-item>Houses</span>
+                                
                             </NuxtLink>
+                            <div>
+                                    <Collapsible v-model:open="isOpen" class="w-[350px] space-y-2">
+                                        <div class="flex items-center justify-between space-x-4 px-4">
+                                            <h4 class="text-sm font-semibold">
+                                                @peduarte
+                                            </h4>
+                                            <CollapsibleTrigger as-child>
+                                                <Button variant="ghost" size="sm" class="w-9 p-0">
+                                                    <ChevronsUpDown class="h-4 w-4" />
+                                                    <span class="sr-only">Toggle</span>
+                                                </Button>
+                                            </CollapsibleTrigger>
+                                        </div>
+                                        <div class="rounded-md border px-4 py-3 font-mono text-sm">
+                                            @radix-ui/primitives
+                                        </div>
+                                        <CollapsibleContent class="space-y-2">
+                                            <div class="rounded-md border px-4 py-3 font-mono text-sm">
+                                                @radix-ui/colors
+                                            </div>
+                                            <div class="rounded-md border px-4 py-3 font-mono text-sm">
+                                                @stitches/react
+                                            </div>
+                                        </CollapsibleContent>
+                                    </Collapsible>
+                                </div>
                         </li>
 
 
@@ -94,3 +122,16 @@
 
     <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90" id="sidebarBackdrop"></div>
 </template>
+
+<script setup lang="ts">
+import { ChevronsUpDown } from 'lucide-vue-next';
+
+import {
+Collapsible,
+CollapsibleContent,
+CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import { ref } from 'vue';
+
+const isOpen = ref(false)
+</script>
