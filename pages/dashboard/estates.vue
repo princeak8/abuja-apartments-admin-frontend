@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Estates</h2>
+        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Estates</h1>
     </div>
 </template>
 

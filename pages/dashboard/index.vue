@@ -1,6 +1,8 @@
 <template>
     <div>
-
+        <div class="mb-4">
+            <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Dashboard</h1>
+        </div>
         <div class="flex flex-row gap-5 mb-5">
             <Card class="flex-1">
                 <CardHeader>

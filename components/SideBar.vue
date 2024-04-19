@@ -1,6 +1,6 @@
 <template>
     <aside id="sidebar"
-        class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+        class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-56 h-full pt-16 font-normal duration-75 lg:flex transition-width"
         aria-label="Sidebar">
         <div
             class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -34,7 +34,7 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <a to="/dashboard/companies"
+                            <NuxtLink to="/dashboard/companies"
                                 class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -43,10 +43,10 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                                 <span class="ml-3" sidebar-toggle-item>Companies</span>
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a to="/dashboard/realtors"
+                            <NuxtLink to="/dashboard/realtors"
                                 class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@
                                     </path>
                                 </svg>
                                 <span class="ml-3" sidebar-toggle-item>Realtors</span>
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/dashboard/estates"
@@ -82,34 +82,34 @@
                                     </path>
                                 </svg>
                                 <span class="ml-3" sidebar-toggle-item>Houses</span>
-                                
+
                             </NuxtLink>
-                            <div>
-                                    <Collapsible v-model:open="isOpen" class="w-[350px] space-y-2">
-                                        <div class="flex items-center justify-between space-x-4 px-4">
-                                            <h4 class="text-sm font-semibold">
-                                                @peduarte
-                                            </h4>
-                                            <CollapsibleTrigger as-child>
-                                                <Button variant="ghost" size="sm" class="w-9 p-0">
-                                                    <ChevronsUpDown class="h-4 w-4" />
-                                                    <span class="sr-only">Toggle</span>
-                                                </Button>
-                                            </CollapsibleTrigger>
+                            <!-- <div>
+                                <Collapsible v-model:open="isOpen" class="w-[350px] space-y-2">
+                                    <div class="flex items-center justify-between space-x-4 px-4">
+                                        <h4 class="text-sm font-semibold">
+                                            @peduarte
+                                        </h4>
+                                        <CollapsibleTrigger as-child>
+                                            <Button variant="ghost" size="sm" class="w-9 p-0">
+                                                <ChevronsUpDown class="h-4 w-4" />
+                                                <span class="sr-only">Toggle</span>
+                                            </Button>
+                                        </CollapsibleTrigger>
+                                    </div>
+                                    <div class="rounded-md border px-4 py-3 font-mono text-sm">
+                                        @radix-ui/primitives
+                                    </div>
+                                    <CollapsibleContent class="space-y-2">
+                                        <div class="rounded-md border px-4 py-3 font-mono text-sm">
+                                            @radix-ui/colors
                                         </div>
                                         <div class="rounded-md border px-4 py-3 font-mono text-sm">
-                                            @radix-ui/primitives
+                                            @stitches/react
                                         </div>
-                                        <CollapsibleContent class="space-y-2">
-                                            <div class="rounded-md border px-4 py-3 font-mono text-sm">
-                                                @radix-ui/colors
-                                            </div>
-                                            <div class="rounded-md border px-4 py-3 font-mono text-sm">
-                                                @stitches/react
-                                            </div>
-                                        </CollapsibleContent>
-                                    </Collapsible>
-                                </div>
+                                    </CollapsibleContent>
+                                </Collapsible>
+                            </div> -->
                         </li>
 
 
@@ -124,13 +124,7 @@
 </template>
 
 <script setup lang="ts">
-import { ChevronsUpDown } from 'lucide-vue-next';
 
-import {
-Collapsible,
-CollapsibleContent,
-CollapsibleTrigger,
-} from '@/components/ui/collapsible';
 import { ref } from 'vue';
 
 const isOpen = ref(false)
