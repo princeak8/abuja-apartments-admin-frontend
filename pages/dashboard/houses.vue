@@ -119,7 +119,7 @@
 
             <Card class="w-1/6">
                 <AspectRatio :ratio="16 / 9" class="bg-muted">
-                    <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=3184&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Photo by Drew Beamer" class="rounded-md object-cover w-full h-full">
                 </AspectRatio>
                 <CardContent class="px-2">
