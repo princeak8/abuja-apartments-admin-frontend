@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { VariantProps } from 'class-variance-authority'
-import { Primitive, type PrimitiveProps } from 'radix-vue'
-import { buttonVariants } from '.'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import type { VariantProps } from 'class-variance-authority';
+import { Primitive, type PrimitiveProps } from 'radix-vue';
+import { buttonVariants } from '.';
 
 interface ButtonVariantProps extends VariantProps<typeof buttonVariants> {}
 
@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <Primitive
     :as="as"
-    :as-child="asChild"
+    
     :class="cn(buttonVariants({ variant, size }), $attrs.class ?? '')"
   >
     <slot />
